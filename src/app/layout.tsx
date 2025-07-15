@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Noto_Sans_JP } from 'next/font/google';
+// import { Kosugi } from "next/font/google";
 import "./globals.css";
-import clsx from "clsx";
+// import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
-const dmSans = DM_Sans({ subsets: ["latin"] });
+const noto = Noto_Sans_JP({
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
-  title: "Light Saas Landing Page",
-  description: "Template created by Frontend Tribe",
+  title: "Kodomo Gakuen",
+  description: "Template created by Jon Kumar",
 };
 
 export default function RootLayout({
@@ -17,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="relative">
-      <body className={clsx(dmSans.className, "antialiased bg-[#EAEEFE]")}>
+      <body className={twMerge(noto.className, "antialiased bg-[#FAF9F9]")}>
         {children}
       </body>
     </html>
