@@ -9,7 +9,7 @@ export const Header = () => {
         <div>
           <a href=""><span className="text-[#32CD32]">test</span></a>
         </div>
-        <ul className="flex gap-[30px] text-[14px] font-bold text-white font-medium">
+        <ul className="flex gap-[35px] text-[14px] font-bold text-white font-medium">
           <li><a href="">ホーム</a></li>
           <li><a href="">インフォメーション</a></li>
           <li><a href="">書類</a></li>
