@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const Header = () => {
   return <div className="flex flex-col">
     <div className="flex justify-between h-[30px] bg-[rgba(0,174,255,0.85)] px-[60px] text-white text-[11px] items-center fixed w-full z-50">
@@ -14,7 +15,6 @@ export const Header = () => {
           <li><a href="">インフォメーション</a></li>
           <li><a href="">書類</a></li>
           <li><a href="">クラス</a></li>
-          <li><a href="">お知らせ・ニューズ</a></li>
           <li><a href="">課外教室</a></li>
         
         </ul>
