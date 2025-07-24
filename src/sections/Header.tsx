@@ -1,103 +1,98 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+
 export const Header = () => {
+  const pathname = usePathname();
+
+  // Type-safe active link styling
+  const navLinkClass = (path: string): string => 
+    `px-[20px] py-[13px] w-full rounded-[3px] hover:bg-[#32cd32] transition-colors duration-200 ${
+      pathname === path ? 'bg-[#32cd32]' : ''
+    }`;
   return <div className="flex flex-col">
     <div className="flex justify-between h-[30px] bg-[rgba(0,174,255,0.85)] px-[60px] text-white text-[11px] items-center fixed w-full z-50">
       <a href=""> info@kodomogakuen.com</a>
       <a href="">English</a>
     </div>
     <div className="fixed top-[30px] w-full z-50 bg-[rgba(0,0,0,0.1)] h-[75px]">
-      <nav className="flex justify-between items-center h-full px-[60px]">
-        <div>
-          <a href=""><span className="text-[#32CD32]">test</span></a>
+      <nav className="flex justify-between items-center h-full px-[30px]">
+        <div className="pl-6">
+          <a href="" className="text-[28px] text-white"><span className="text-[#32CD32]"></span>こども学園 Kodomo Gakuen</a>
         </div>
-        {/* <ul className="flex gap-[35px] text-[14px] font-bold text-white font-medium">
-          <li><a href="">ホーム</a></li>
-          <li><a href="">インフォメーション</a></li>
-          <li><a href="">書類</a></li>
-          <li><a href="">クラス</a></li>
-          <li><a href="">課外教室</a></li>
-        
-        </ul> */}
-        <ul className="flex w-full items-center justify-center text-white h-full">
-            <li className="relative mx-[3px] flex -z-10"><a className="text-[1.4rem] p-[1.3rem_2rem] rounded-[3px] transition-all duration-200 w-full" href="./index.html"><span>ホーム</span> </a></li>
-            
-            <li className="nav-menu__item nav-menu__item--2">
-              <a className="nav-menu__link nav-menu__link--2" href="#" data-nav="1">インフォメーション</a>
-              <ul className="submenu-list">
-                <li className="submenu__item">
-                  <a href="./about.html" className="submenu__link">
-                    <svg className="navbar__icon">
-                      
-                    </svg>
-                     <span>保育方針</span> 
-                  </a>
-                </li>
-                <li className="submenu__item">
-                  <a href="./fees.html" className="submenu__link">
-                    <svg className="navbar__icon">
-                      
-                    </svg>
+        <ul className="flex gap-[5px] text-white">
+      {/* Home */}
+      <li>
+        <Link href="/" className={navLinkClass('/')}>
+          <span>ホーム</span>
+        </Link>
+      </li>
 
+      {/* Information */}
+      <li>
+        <Link 
+          href="/information" 
+          className={navLinkClass('/information')}
+          data-nav="1"
+        >
+          インフォメーション
+        </Link>
+        {/* Dropdown would go here */}
+      </li>
 
-                    <span>保育料</span>
-                  </a>
-                </li>
-                <li className="submenu__item">
-                  <a href="./privacy.html" className="submenu__link">
-                    <svg className="navbar__icon">
-                      
-                    </svg>
+      {/* Forms */}
+      <li>
+        <Link 
+          href="/forms" 
+          className={navLinkClass('/forms')}
+          data-nav="2"
+        >
+          書類
+        </Link>
+      </li>
 
+      {/* Classes */}
+      <li className="relative group">
+        <Link 
+          href="/classes" 
+          className={navLinkClass('/classes')}
+          data-nav="3"
+        >
+          クラス
+        </Link>
+        {/* Dropdown menu - uncomment when ready */}
+        {/*
+        <ul className="absolute hidden group-hover:block bg-white text-gray-800 min-w-[200px] rounded-md shadow-lg mt-1 z-50">
+          <li>
+            <Link href="/classes/nyuuji" className="block px-4 py-2 hover:bg-gray-100">
+              乳児
+            </Link>
+          </li>
+          <li>
+            <Link href="/classes/youji" className="block px-4 py-2 hover:bg-gray-100">
+              幼児
+            </Link>
+          </li>
+          <li>
+            <Link href="/classes/star" className="block px-4 py-2 hover:bg-gray-100">
+              国際クラス
+            </Link>
+          </li>
+        </ul>
+        */}
+      </li>
 
-                    <span>プライバシーポリシー</span>
-                  </a>
-                </li>
-                <li className="submenu__item">
-                  <a href="./menu.html" className="submenu__link">
-                    <svg className="navbar__icon">
-                      
-                    </svg>
-
-
-                    <span>給食</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-       
-            <li className="nav-menu__item nav-menu__item--3">
-              <a className="nav-menu__link nav-menu__link--3" href="./forms.html" data-nav="2">書類</a>
-              
-            </li>
-           
-            <li className="nav-menu__item nav-menu__item--4">
-              <a className="nav-menu__link nav-menu__link--4" href="#" data-nav="3">クラス</a>
-              <ul className="submenu-list">
-                <li className="submenu__item">
-                  <a href="./nyuuji.html" className="submenu__link"><svg className="navbar__icon">
-                    
-                  </svg><span>乳児</span> </a>
-                </li>
-                <li className="submenu__item">
-                  <a href="./youji.html" className="submenu__link"><svg className="navbar__icon">
-                    
-                  </svg><span>幼児</span> </a>
-                </li>
-                <li className="submenu__item">
-                  <a href="./star.html" className="submenu__link"><svg className="navbar__icon">
-                    
-                  </svg><span>国際クラス</span> </a>
-                </li>
-              </ul>
-            </li>
-            
-            <li className="nav-menu__item nav-menu__item--5"><a className="nav-menu__link" href="./blog.html">お知らせ・ニューズ</a></li>
-            
-            <li className="nav-menu__item nav-menu__item--6">
-              <a className="nav-menu__link" href="./activities.html">課外教室</a>
-            </li>
-            
-          </ul>
+      {/* Activities */}
+      <li>
+        <Link 
+          href="/activities" 
+          className={navLinkClass('/activities')}
+        >
+          課外教室
+        </Link>
+      </li>
+    </ul>
           
 
       </nav>

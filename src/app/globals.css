@@ -43,3 +43,9 @@
   background: var(--color-light-2);
   color: var(--color-dark-1);
   line-height: 1.6; }
+
+  @layer components {
+    .nav-menu-style{
+      @apply px-[20px] py-[13px] w-full rounded-[3px] hover:bg-[#32cd32]
+    }
+  }
