@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+// import { FaBook, FaYenSign, FaLock, FaUtensils } from "react-icons/fa";
 
 
 export default function Header(){
@@ -30,7 +31,7 @@ export default function Header(){
       </li>
 
       {/* Information */}
-      <li>
+      <li className="dropdown-container">
         <Link 
           href="/information" 
           className={navLinkClass('/information')}
@@ -39,6 +40,32 @@ export default function Header(){
           インフォメーション
         </Link>
         {/* Dropdown would go here */}
+        <ul className="dropdown-menu">
+    <li className="dropdown-item">
+      <Link href="/about" className="dropdown-link">
+        {/* <FaBook className="navbar-icon" /> */}
+        <span>保育方針</span>
+      </Link>
+    </li>
+    <li className="dropdown-item">
+      <Link href="/fees" className="dropdown-link">
+        {/* <FaYenSign className="navbar-icon" /> */}
+        <span>保育料</span>
+      </Link>
+    </li>
+    <li className="dropdown-item">
+      <Link href="/privacy" className="dropdown-link">
+        {/* <FaLock className="navbar-icon" /> */}
+        <span>プライバシーポリシー</span>
+      </Link>
+    </li>
+    <li className="dropdown-item">
+      <Link href="/menu" className="dropdown-link">
+        {/* <FaUtensils className="navbar-icon" /> */}
+        <span>給食</span>
+      </Link>
+    </li>
+  </ul>
       </li>
 
       {/* Forms */}
