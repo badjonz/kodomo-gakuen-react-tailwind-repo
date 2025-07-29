@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import heroImage from '@assets/hero-image.jpg';
 
-export const Hero = () => {
+export const HomeHero = () => {
   return (
     <div className="h-screen text-white relative overflow-auto before:content-[''] before:absolute before:inset-0 before:bg-black/45 before:z-10">
       <Image 

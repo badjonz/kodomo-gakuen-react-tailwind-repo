@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from 'next/font/google';
-// import { Kosugi } from "next/font/google";
 import "./globals.css";
-// import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
+import  Header  from "@/components/Header/Header";// Import your Header component
 
 const noto = Noto_Sans_JP({
   subsets: ['latin'],
@@ -22,7 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="relative">
       <body className={twMerge(noto.className, "antialiased bg-[#FAF9F9]")}>
-        {children}
+        {/* Persistent Header */}
+        <Header />
+        
+        {/* Page Content */}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );

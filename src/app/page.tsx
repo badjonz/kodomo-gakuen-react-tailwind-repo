@@ -1,6 +1,10 @@
-import { Header } from "@/sections/Header";
-import { Hero } from "@/sections/Hero";
+import { HomeHero } from "@components/Hero/HomeHero";
 import { AgeGroup } from "@/sections/AgeGroup";
 export default function Home() {
-  return <><Header /><Hero /><AgeGroup /></> ;
+  return (
+    <main>
+      <HomeHero />
+      {/* Other home page content */}
+    </main>
+  )
 }
