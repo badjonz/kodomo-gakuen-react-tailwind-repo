@@ -33,39 +33,39 @@ export default function Header(){
       {/* Information */}
       <li className="dropdown-container">
         <Link 
-          href="/information" 
-          className={navLinkClass('/information')}
+          href="" 
+          className="px-[20px] py-[13px] w-full rounded-[3px] hover:bg-[#32cd32] transition-colors duration-200"
           data-nav="1"
         >
           インフォメーション
         </Link>
         {/* Dropdown would go here */}
         <ul className="dropdown-menu">
-    <li className="dropdown-item">
-      <Link href="/about" className="dropdown-link">
-        {/* <FaBook className="navbar-icon" /> */}
-        <span>保育方針</span>
-      </Link>
-    </li>
-    <li className="dropdown-item">
-      <Link href="/fees" className="dropdown-link">
-        {/* <FaYenSign className="navbar-icon" /> */}
-        <span>保育料</span>
-      </Link>
-    </li>
-    <li className="dropdown-item">
-      <Link href="/privacy" className="dropdown-link">
-        {/* <FaLock className="navbar-icon" /> */}
-        <span>プライバシーポリシー</span>
-      </Link>
-    </li>
-    <li className="dropdown-item">
-      <Link href="/menu" className="dropdown-link">
-        {/* <FaUtensils className="navbar-icon" /> */}
-        <span>給食</span>
-      </Link>
-    </li>
-  </ul>
+        <li className="dropdown-item">
+          <Link href="/about" className="dropdown-link">
+            {/* <FaBook className="navbar-icon" /> */}
+            <span>保育方針</span>
+          </Link>
+        </li>
+        <li className="dropdown-item">
+          <Link href="/fees" className="dropdown-link">
+            {/* <FaYenSign className="navbar-icon" /> */}
+            <span>保育料</span>
+          </Link>
+        </li>
+        <li className="dropdown-item">
+          <Link href="/privacy" className="dropdown-link">
+            {/* <FaLock className="navbar-icon" /> */}
+            <span>プライバシーポリシー</span>
+          </Link>
+        </li>
+        <li className="dropdown-item">
+          <Link href="/menu" className="dropdown-link">
+            {/* <FaUtensils className="navbar-icon" /> */}
+            <span>給食</span>
+          </Link>
+        </li>
+        </ul>
       </li>
 
       {/* Forms */}
@@ -80,10 +80,10 @@ export default function Header(){
       </li>
 
       {/* Classes */}
-      <li className="relative group">
+      <li className="dropdown-container">
         <Link 
-          href="/classes" 
-          className={navLinkClass('/classes')}
+          href="" 
+          className="px-[20px] py-[13px] w-full rounded-[3px] hover:bg-[#32cd32] transition-colors duration-200"
           data-nav="3"
         >
           クラス
@@ -107,7 +107,29 @@ export default function Header(){
             </Link>
           </li>
         </ul>
-        */}
+        */
+        
+        <ul className="dropdown-menu">
+        <li className="dropdown-item">
+          <Link href="/nyuuji" className="dropdown-link">
+            
+            <span>乳児</span>
+          </Link>
+        </li>
+        <li className="dropdown-item">
+          <Link href="/youji" className="dropdown-link">
+           
+            <span>幼児</span>
+          </Link>
+        </li>
+        <li className="dropdown-item">
+          <Link href="/star" className="dropdown-link">
+            
+            <span>国際クラス</span>
+          </Link>
+        </li>
+        
+        </ul>}
       </li>
 
       {/* Activities */}
